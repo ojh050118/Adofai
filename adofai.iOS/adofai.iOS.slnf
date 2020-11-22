@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "path": "adofai.sln",
+    "projects": [
+      "adofai.Game\\adofai.Game.csproj",
+      "adofai.Resources\\adofai.Resources.csproj",
+      "adofai.iOS\\adofai.iOS.csproj"
+    ]
+  }
+}
