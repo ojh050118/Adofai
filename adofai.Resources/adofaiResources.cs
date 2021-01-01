@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 
-namespace adofai.Resources
+namespace Adofai.Resources
 {
-    public static class adofaiResources
+    public static class AdofaiResources
     {
-        public static Assembly ResourceAssembly => typeof(adofaiResources).Assembly;
+        public static Assembly ResourceAssembly => typeof(AdofaiResources).Assembly;
     }
 }

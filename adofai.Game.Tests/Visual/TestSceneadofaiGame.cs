@@ -2,19 +2,19 @@ using osu.Framework.Allocation;
 using osu.Framework.Platform;
 using osu.Framework.Testing;
 
-namespace adofai.Game.Tests.Visual
+namespace Adofai.Game.Tests.Visual
 {
-    public class TestSceneadofaiGame : TestScene
+    public class TestSceneAdofaiGame : TestScene
     {
         // Add visual tests to ensure correct behaviour of your game: https://github.com/ppy/osu-framework/wiki/Development-and-Testing
         // You can make changes to classes associated with the tests and they will recompile and update immediately.
 
-        private adofaiGame game;
+        private AdofaiGame game;
 
         [BackgroundDependencyLoader]
         private void load(GameHost host)
         {
-            game = new adofaiGame();
+            game = new AdofaiGame();
             game.SetHost(host);
 
             Add(game);
