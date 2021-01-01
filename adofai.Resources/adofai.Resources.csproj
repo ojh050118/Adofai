@@ -8,4 +8,7 @@
     <EmbeddedResource Include="Textures\**\*" />
     <EmbeddedResource Include="Tracks\**\*" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ppy.osu.Framework" Version="2020.1229.0" />
+  </ItemGroup>
 </Project>

@@ -3,9 +3,9 @@ using osu.Framework.Graphics.Cursor;
 using osu.Framework.Platform;
 using osu.Framework.Testing;
 
-namespace adofai.Game.Tests
+namespace Adofai.Game.Tests
 {
-    public class adofaiTestBrowser : adofaiGameBase
+    public class AdofaiTestBrowser : AdofaiGameBase
     {
         protected override void LoadComplete()
         {
@@ -13,7 +13,7 @@ namespace adofai.Game.Tests
 
             AddRange(new Drawable[]
             {
-                new TestBrowser("adofai"),
+                new TestBrowser("Adofai"),
                 new CursorContainer()
             });
         }

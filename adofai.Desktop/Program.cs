@@ -1,15 +1,15 @@
 ﻿using osu.Framework.Platform;
 using osu.Framework;
-using adofai.Game;
+using Adofai.Game;
 
-namespace adofai.Desktop
+namespace Adofai.Desktop
 {
     public static class Program
     {
         public static void Main()
         {
-            using (GameHost host = Host.GetSuitableHost(@"adofai"))
-            using (osu.Framework.Game game = new adofaiGame())
+            using (GameHost host = Host.GetSuitableHost(@"Adofai"))
+            using (osu.Framework.Game game = new AdofaiGame())
                 host.Run(game);
         }
     }

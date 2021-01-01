@@ -1,11 +1,11 @@
-﻿using osu.Framework.Graphics.Containers;
-using osu.Framework.Allocation;
+﻿using osu.Framework.Allocation;
 using osu.Framework.Graphics;
+using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
-using osuTK.Graphics;
 using osuTK;
+using osuTK.Graphics;
 
-namespace adofai.Game.Player
+namespace Adofai.Game.Player
 {
     public class Fire : CompositeDrawable
     {
@@ -13,6 +13,9 @@ namespace adofai.Game.Player
         {
             Anchor = Anchor.Centre;
             Origin = Anchor.Centre;
+            Masking = true;
+            BorderColour = Color4.White;
+            BorderThickness = 2.5f;
             Size = new Vector2(50.0f);
         }
 
@@ -23,6 +26,10 @@ namespace adofai.Game.Player
             {
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre,
+                AutoSizeAxes = Axes.Both,
+                Masking = true,
+                BorderColour = Color4.White,
+                BorderThickness = 2.5f,
                 Children = new Drawable[]
                 {
                     new Circle
@@ -30,7 +37,7 @@ namespace adofai.Game.Player
                         Colour = Color4.Red,
                         Size = new Vector2(50.0f),
                         Anchor = Anchor.Centre,
-                        Origin = Anchor.Centre
+                        Origin = Anchor.Centre,
                     }
                 }
             };

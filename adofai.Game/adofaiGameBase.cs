@@ -1,13 +1,13 @@
+using Adofai.Resources;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.IO.Stores;
 using osuTK;
-using adofai.Resources;
 
-namespace adofai.Game
+namespace Adofai.Game
 {
-    public class adofaiGameBase : osu.Framework.Game
+    public class AdofaiGameBase : osu.Framework.Game
     {
         // Anything in this class is shared between the test browser and the game implementation.
         // It allows for caching global dependencies that should be accessible to tests, or changing
@@ -15,7 +15,7 @@ namespace adofai.Game
 
         protected override Container<Drawable> Content { get; }
 
-        protected adofaiGameBase()
+        protected AdofaiGameBase()
         {
             // Ensure game and tests scale with window size and screen DPI.
             base.Content.Add(Content = new DrawSizePreservingFillContainer
@@ -28,7 +28,7 @@ namespace adofai.Game
         [BackgroundDependencyLoader]
         private void load()
         {
-            Resources.AddStore(new DllResourceStore(typeof(adofaiResources).Assembly));
+            Resources.AddStore(new DllResourceStore(typeof(AdofaiResources).Assembly));
         }
     }
 }

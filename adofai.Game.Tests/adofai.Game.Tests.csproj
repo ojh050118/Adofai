@@ -5,10 +5,11 @@
     <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
   <ItemGroup Label="Project References">
-    <ProjectReference Include="..\adofai.Game\adofai.Game.csproj" />
+    <ProjectReference Include="..\Adofai.Game\Adofai.Game.csproj" />
   </ItemGroup>
   <ItemGroup Label="Package References">
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="ppy.osu.Framework" Version="2020.1229.0" />
   </ItemGroup>
 </Project>

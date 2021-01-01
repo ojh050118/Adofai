@@ -1,26 +1,29 @@
-﻿using osu.Framework.Allocation;
+﻿using Adofai.Game.Screens;
+using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Screens;
 
-namespace adofai.Game
+namespace Adofai.Game
 {
-    public class adofaiGame : adofaiGameBase
+    public class AdofaiGame : AdofaiGameBase
     {
         private ScreenStack screenStack;
+
+        //private MainMenuScreen mainMenu;
+        private GameplayScreen game;
 
         [BackgroundDependencyLoader]
         private void load()
         {
-            // Add your top-level game components here.
-            // A screen stack and sample screen has been provided for convenience, but you can replace it if you don't want to use screens.
             Child = screenStack = new ScreenStack { RelativeSizeAxes = Axes.Both };
+            //mainMenu = new MainMenuScreen();
+            game = new GameplayScreen();
         }
 
         protected override void LoadComplete()
         {
             base.LoadComplete();
-
-            screenStack.Push(new MainScreen());
+            screenStack.Push(game);
         }
     }
 }
