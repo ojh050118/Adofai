@@ -5,8 +5,6 @@ using osu.Framework.Graphics.Containers;
 using osu.Framework.Input;
 using osu.Framework.Utils;
 using osuTK;
-using osu.Framework.Graphics.Sprites;
-using osu.Framework.Graphics.Textures;
 
 namespace Adofai.Game.Graphics.Containers
 {
