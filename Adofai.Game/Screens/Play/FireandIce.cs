@@ -12,7 +12,7 @@ namespace Adofai.Game.Screens.Play
         private Fire fire;
         private Ice ice;
         private const float size = 50.0f;
-        private readonly float bpm;
+        public float BPM;
         public const int DISTANCE = 100;
         public Drawable Container;
 
@@ -31,7 +31,7 @@ namespace Adofai.Game.Screens.Play
             Origin = Anchor.Centre;
             Masking = true;
             AutoSizeAxes = Axes.Both;
-            bpm = newBpm;
+            BPM = newBpm;
         }
 
         [BackgroundDependencyLoader]
@@ -67,9 +67,9 @@ namespace Adofai.Game.Screens.Play
         public void RotateContainer()
         {
             // 360도를 회전합니다. 하나의 타일은 1비트이고 360도는 2비트이기에 60000 / BPM으로 계산하고 2를 곱합니다.
-            InternalChild.Loop(b => b.RotateTo(0).RotateTo(360, (60000 / bpm) * 2));
+            InternalChild.Loop(b => b.RotateTo(0).RotateTo(360, (60000 / BPM) * 2));
             // 두 행성(fire, ice)사이의 거리.
-            ice.MoveToX(DISTANCE, (60000 / bpm), Easing.OutQuint);
+            ice.MoveToX(DISTANCE, (60000 / BPM), Easing.OutQuint);
         }
 
         public void ChangeOrigin()
@@ -161,7 +161,7 @@ namespace Adofai.Game.Screens.Play
 
         public void Move()
         {
-            InternalChild.MoveToOffset(new Vector2(-size * 2, 0), (60000 / bpm), Easing.OutQuint);
+            InternalChild.MoveToOffset(new Vector2(-size * 2, 0), (60000 / BPM), Easing.OutQuint);
         }
 
         public void Init()

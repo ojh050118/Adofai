@@ -13,31 +13,37 @@ namespace Adofai.Game.Screens.Play
         public int Count;
         public GameState State = GameState.Ready;
         public const int DEFAULT_JUDGEMENT_ANGLE = 20;
-        private readonly float bpm;
+        public float BPM;
         public bool DisableInput;
+        public bool FillRequird;
+        public int Hit;
 
         /// <summary>
         /// 각도 판정 오차 범위입니다. 기본값은 20 입니다.
         /// </summary>
         public int JudgementAngle = DEFAULT_JUDGEMENT_ANGLE;
 
+        /// <summary>
+        /// 타일과 행성, 두 요소를 합친 하나의 요소입니다. 게의의 대부분을 관리합니다. 타일과 행성을 관리할 수 있습니다.
+        /// </summary>
+        /// <param name="newBpm">초기 BPM을 설정합니다.</param>
         public Beatmap(float newBpm)
         {
             Anchor = Anchor.Centre;
             Origin = Anchor.Centre;
             AutoSizeAxes = Axes.Both;
-            bpm = newBpm;
+            BPM = newBpm;
         }
 
         [BackgroundDependencyLoader]
         private void load()
         {
-            fireandIce = new FireandIce(bpm)
+            fireandIce = new FireandIce(BPM)
             {
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre
             };
-            Tile = new FillFlowTile(() => new Tile(), bpm);
+            Tile = new FillFlowTile(() => new Tile(), BPM);
             InternalChild = new Container
             {
                 Anchor = Anchor.Centre,
@@ -50,6 +56,18 @@ namespace Adofai.Game.Screens.Play
             };
         }
 
+        protected override void Update()
+        {
+            base.Update();
+
+            if (BPM != fireandIce.BPM && BPM != Tile.BPM)
+            {
+                fireandIce.BPM = BPM;
+                Tile.BPM = BPM;
+                ChangeGameState(GameState.Ready);
+            }
+        }
+
         private void init()
         {
             fireandIce.Init();
@@ -58,11 +76,12 @@ namespace Adofai.Game.Screens.Play
 
         private void start()
         {
-            fireandIce.FadeTo(1, 60000 / bpm);
+            fireandIce.FadeTo(1, 60000 / BPM);
             fireandIce.RotateContainer();
             Tile.AddTile();
             tapCount = 0;
             Count = 1;
+            Hit = 0;
         }
 
         private void stop()
@@ -70,7 +89,6 @@ namespace Adofai.Game.Screens.Play
             fireandIce.ClearTransforms(true);
             Tile.ClearTransforms(true);
             ClearTransforms(true);
-            State = GameState.GameOver;
         }
 
         public void AddTile()
@@ -121,6 +139,7 @@ namespace Adofai.Game.Screens.Play
                 fireandIce.Container.Position = Tile.GetTilePosition(tapCount);
                 Move();
                 AddTile();
+                Hit += 1;
             }
 
             else if (fireandIce.CurrentOrigin == OriginState.Ice && fireandIce.Container.Rotation >= 180 - JudgementAngle && fireandIce.Container.Rotation <= 180 + JudgementAngle)
@@ -130,6 +149,7 @@ namespace Adofai.Game.Screens.Play
                 fireandIce.Container.Position = Tile.GetTilePosition(tapCount);
                 Move();
                 AddTile();
+                Hit += 1;
             }
 
             else
@@ -168,7 +188,7 @@ namespace Adofai.Game.Screens.Play
             }
         }
 
-        public void Autoplay(bool state = false)
+        public void Autoplay(bool state = false, bool directNextPlay = true)
         {
             if (state && State == GameState.Playing)
             {
@@ -183,6 +203,12 @@ namespace Adofai.Game.Screens.Play
                 {
                     Tap();
                 }
+            }
+
+            if (State == GameState.Ready && directNextPlay)
+            {
+                ChangeGameState(GameState.Playing);
+                FillRequird = true;
             }
         }
     }

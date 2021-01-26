@@ -1,5 +1,6 @@
-﻿using osu.Framework.Graphics;
-using osu.Framework.Graphics.Shapes;
+﻿using Adofai.Game.Graphics.Containers;
+using osu.Framework.Allocation;
+using osu.Framework.Graphics;
 using osu.Framework.Input.Events;
 using osu.Framework.Screens;
 using osuTK.Input;
@@ -8,15 +9,14 @@ namespace Adofai.Game.Screens
 {
     public class AdofaiScreen : Screen
     {
+        private ParallaxContainer parallax;
+
         public AdofaiScreen()
         {
             Anchor = Anchor.Centre;
             Origin = Anchor.Centre;
-            AddInternal(new Box
-            {
-                RelativeSizeAxes = Axes.Both,
-                Colour = Colour4.Black
-            });
+            parallax = new ParallaxContainer();
+            parallax.AddSprite();
         }
 
         protected override bool OnKeyDown(KeyDownEvent e)

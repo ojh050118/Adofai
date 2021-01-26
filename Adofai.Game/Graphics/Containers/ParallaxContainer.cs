@@ -5,6 +5,8 @@ using osu.Framework.Graphics.Containers;
 using osu.Framework.Input;
 using osu.Framework.Utils;
 using osuTK;
+using osu.Framework.Graphics.Sprites;
+using osu.Framework.Graphics.Textures;
 
 namespace Adofai.Game.Graphics.Containers
 {
@@ -12,6 +14,7 @@ namespace Adofai.Game.Graphics.Containers
     {
         public const float DEFAULT_PARALLAX_AMOUNT = 0.02f;
         public float ParallaxAmount = DEFAULT_PARALLAX_AMOUNT;
+        private TextureStore textures = new TextureStore();
 
         public ParallaxContainer()
         {
@@ -58,6 +61,14 @@ namespace Adofai.Game.Graphics.Containers
             content.Scale = Interpolation.ValueAt(elapsed, content.Scale, new Vector2(1 + Math.Abs(ParallaxAmount)), 0, 1000, Easing.OutQuint);
 
             firstUpdate = false;
+        }
+
+        public void AddSprite(string name = "bg1")
+        {
+            content.Add(new Sprite
+            {
+                Texture = textures.Get(name)
+            });
         }
     }
 }

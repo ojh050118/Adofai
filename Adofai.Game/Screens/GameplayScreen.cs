@@ -19,26 +19,28 @@ namespace Adofai.Game.Screens
         private Vector2 lastSize;
         public GameState CurrentState;
         public TrackManager Track;
+        public SampleManager Sample;
+        private int lastHit;
+        private int lastTrackNum;
 
         [BackgroundDependencyLoader]
         private void load()
         {
-            beatmap = new Beatmap(230.0f)
+            Track = new TrackManager("Tempest.mp3");
+            Sample = new SampleManager();
+            beatmap = new Beatmap(Track.CurrentBPM)
             {
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre
             };
-            Track = new TrackManager
-            {
-                TrackName = "Once again",
-                ExtensionIdx = 0,
-                BPM = 230.0f,
-            };
             gameScreen.Children = new Drawable[]
             {
                 beatmap,
-                Track
+                Track,
+                Sample
             };
+
+            Track.CurrentVolume = 25.0f;
 
             AddInternal(gameScreen);
         }
@@ -51,11 +53,19 @@ namespace Adofai.Game.Screens
             beatmap.ChangeGameState(CurrentState = GameState.Ready);
         }
 
-        protected override void UpdateAfterChildren()
+        protected override void Update()
         {
-            base.UpdateAfterChildren();
+            base.Update();
+
             CurrentState = beatmap.State;
             Track.State = CurrentState;
+
+            if (lastTrackNum != Track.CurrentTrackNum)
+            {
+                beatmap.BPM = Track.CurrentBPM;
+
+                lastTrackNum = Track.CurrentTrackNum;
+            }
 
             if (!gameScreen.DrawSize.Equals(lastSize) && beatmap.State == GameState.Playing)
             {
@@ -64,6 +74,18 @@ namespace Adofai.Game.Screens
             }
 
             beatmap.Autoplay(true);
+
+            if (beatmap.FillRequird)
+            {
+                fillTile();
+                beatmap.FillRequird = false;
+            }
+
+            if (lastHit != beatmap.Hit)
+            {
+                Sample.Play();
+                lastHit = beatmap.Hit;
+            }
         }
 
         protected override bool OnKeyDown(KeyDownEvent e)
@@ -93,6 +115,12 @@ namespace Adofai.Game.Screens
 
             if (e.Key == Key.Down)
                 Track.Volume(TrackManager.VolumeAction.Down, 5);
+
+            if (e.Key == Key.Left)
+                Sample.Volume(SampleManager.VolumeAction.Down, 5);
+
+            if (e.Key == Key.Right)
+                Sample.Volume(SampleManager.VolumeAction.Up, 5);
 
             return base.OnKeyDown(e);
         }
