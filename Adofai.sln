@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adofai.Desktop", "adofai.Desktop\Adofai.Desktop.csproj", "{AEB3FC89-DC3E-4BC9-9EC7-03B72FC5D849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adofai.Desktop", "Adofai.Desktop\Adofai.Desktop.csproj", "{AEB3FC89-DC3E-4BC9-9EC7-03B72FC5D849}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adofai.Game", "adofai.Game\Adofai.Game.csproj", "{1ADACD09-7BE3-46A1-AEAB-C41E78E8700F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adofai.Game", "Adofai.Game\Adofai.Game.csproj", "{1ADACD09-7BE3-46A1-AEAB-C41E78E8700F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adofai.Game.Tests", "adofai.Game.Tests\Adofai.Game.Tests.csproj", "{0A9CA1A5-5147-4AA8-9B9D-87178DE5A78D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adofai.Game.Tests", "Adofai.Game.Tests\Adofai.Game.Tests.csproj", "{0A9CA1A5-5147-4AA8-9B9D-87178DE5A78D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adofai.Resources", "adofai.Resources\Adofai.Resources.csproj", "{31D3872C-3A4F-437E-9655-3EF58DD62F46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adofai.Resources", "Adofai.Resources\Adofai.Resources.csproj", "{31D3872C-3A4F-437E-9655-3EF58DD62F46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9AF9C164-2A9E-4958-BB12-0FEDC40F58EC}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		adofai.sln.DotSettings = adofai.sln.DotSettings
+		Adofai.sln.DotSettings = Adofai.sln.DotSettings
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject

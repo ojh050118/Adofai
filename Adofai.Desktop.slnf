@@ -1,0 +1,11 @@
+﻿{
+  "solution": {
+    "path": "Adofai.sln",
+    "projects": [
+      "Adofai.Desktop\\Adofai.Desktop.csproj",
+      "Adofai.Game\\Adofai.Game.csproj",
+      "Adofai.Game.Tests\\Adofai.Game.Tests.csproj",
+      "Adofai.Resources\\Adofai.Resources.csproj"
+    ]
+  }
+}
