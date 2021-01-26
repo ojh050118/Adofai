@@ -25,7 +25,7 @@ test:
       - 'build\**\*'
 on_success:
   - ps: Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
-  - ps: ./send.ps1 success $env:https://discord.com/api/webhooks/803643798650486795/hB0aOsU286JQ3U7G3AgBKpvnCiPib6vHtuujSA9ciW-nEBsqJ1tlfl2GIEgbW-cjJgpd
+  - ps: ./send.ps1 success $env:WEBHOOK_URL
 on_failure:
   - ps: Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
-  - ps: ./send.ps1 failure $env:https://discord.com/api/webhooks/803643798650486795/hB0aOsU286JQ3U7G3AgBKpvnCiPib6vHtuujSA9ciW-nEBsqJ1tlfl2GIEgbW-cjJgpd
+  - ps: ./send.ps1 failure $env:WEBHOOK_URL
