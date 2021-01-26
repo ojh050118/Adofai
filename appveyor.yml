@@ -19,13 +19,13 @@ after_build:
   - ps: dotnet tool restore
   - ps: dotnet format --dry-run --check
   - ps: .\InspectCode.ps1
-test:
-  assemblies:
-    except:
-      - 'build\**\*'
 on_success:
   - ps: Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
   - ps: ./send.ps1 success $env:WEBHOOK_URL
 on_failure:
   - ps: Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
   - ps: ./send.ps1 failure $env:WEBHOOK_URL
+test:
+  assemblies:
+    except:
+      - 'build\**\*'
