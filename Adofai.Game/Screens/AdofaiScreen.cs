@@ -9,14 +9,10 @@ namespace Adofai.Game.Screens
 {
     public class AdofaiScreen : Screen
     {
-        private ParallaxContainer parallax;
-
         public AdofaiScreen()
         {
             Anchor = Anchor.Centre;
             Origin = Anchor.Centre;
-            parallax = new ParallaxContainer();
-            parallax.AddSprite();
         }
 
         protected override bool OnKeyDown(KeyDownEvent e)
