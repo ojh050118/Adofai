@@ -14,7 +14,7 @@ namespace Adofai.Game.Graphics.Containers
     {
         public const float DEFAULT_PARALLAX_AMOUNT = 0.02f;
         public float ParallaxAmount = DEFAULT_PARALLAX_AMOUNT;
-        private TextureStore textures = new TextureStore();
+        private readonly textures = new TextureStore();
 
         public ParallaxContainer()
         {
