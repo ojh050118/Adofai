@@ -11,7 +11,7 @@ namespace Adofai.Game.Beatmaps.Drawables
         private readonly Func<Tile> createTile;
         private float beforeTileX;
         private float offset;
-        private readonly float bpm;
+        public float BPM;
 
         public FillFlowTile(Func<Tile> createTile, float newBpm)
         {
@@ -19,7 +19,7 @@ namespace Adofai.Game.Beatmaps.Drawables
             Anchor = Anchor.Centre;
             Origin = Anchor.Centre;
             AutoSizeAxes = Axes.Both;
-            bpm = newBpm;
+            BPM = newBpm;
         }
 
         /// <summary>
@@ -40,8 +40,8 @@ namespace Adofai.Game.Beatmaps.Drawables
 
             lastChild.Alpha = 0;
             lastChild.Position = new Vector2(beforeTileX, lastChild.Position.Y);
-            lastChild.MoveTo(new Vector2(offset, lastChild.Position.Y), 60000 / bpm, Easing.OutQuint);
-            lastChild.FadeTo(1, (60000 / bpm) / 2);
+            lastChild.MoveTo(new Vector2(offset, lastChild.Position.Y), 60000 / BPM, Easing.OutQuint);
+            lastChild.FadeTo(1, (60000 / BPM) / 2);
 
             offset += width;
             beforeTileX = offset - width;
@@ -86,7 +86,7 @@ namespace Adofai.Game.Beatmaps.Drawables
             {
                 // Math.Truncate는 소수점을 버립니다. Math.Ceiling를 사용하게 된다면 1씩 증가하여 서서히 타일이 밀립니다.
                 width = (int)Math.Truncate(childTile.Width * (int)childTile.Scale.X);
-                childTile.MoveToOffset(new Vector2(-width, childTile.Y), (60000 / bpm), Easing.OutQuint).Then();
+                childTile.MoveToOffset(new Vector2(-width, childTile.Y), (60000 / BPM), Easing.OutQuint).Then();
             }
 
             offset -= width;
