@@ -10,6 +10,6 @@
   <ItemGroup Label="Package References">
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
-    <PackageReference Include="ppy.osu.Framework" Version="2021.118.0" />
+    <PackageReference Include="ppy.osu.Framework" Version="2021.127.0" />
   </ItemGroup>
 </Project>
