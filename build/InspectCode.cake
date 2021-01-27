@@ -8,8 +8,8 @@ var target = Argument("target", "CodeAnalysis");
 var configuration = Argument("configuration", "Release");
 
 var rootDirectory = new DirectoryPath("..");
-var sln = rootDirectory.CombineWithFilePath("adofai.sln");
-var desktopSlnf = rootDirectory.CombineWithFilePath("adofai.Desktop.slnf");
+var sln = rootDirectory.CombineWithFilePath("Adofai.sln");
+var desktopSlnf = rootDirectory.CombineWithFilePath("Adofai.Desktop.slnf");
 
 ///////////////////////////////////////////////////////////////////////////////
 // TASKS

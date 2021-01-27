@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.Build.Traversal">
   <ItemGroup>
-    <ProjectReference Include="..\adofai.Game.Tests\adofai.Game.Tests.csproj" />
-    <ProjectReference Include="..\adofai.Resources\adofai.Resources.csproj" />
-    <ProjectReference Include="..\adofai.Game\adofai.Game.csproj" />
-    <ProjectReference Include="..\adofai.Desktop\adofai.Desktop.csproj" />
+    <ProjectReference Include="..\Adofai.Game.Tests\Adofai.Game.Tests.csproj" />
+    <ProjectReference Include="..\Adofai.Resources\Adofai.Resources.csproj" />
+    <ProjectReference Include="..\Adofai.Game\Adofai.Game.csproj" />
+    <ProjectReference Include="..\Adofai.Desktop\Adofai.Desktop.csproj" />
   </ItemGroup>
 </Project>
