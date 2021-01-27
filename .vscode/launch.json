@@ -9,13 +9,13 @@
             "request": "launch",
             "program": "dotnet",
             "args": [
-                "${workspaceRoot}/adofai.Game.Tests/bin/Debug/netcoreapp3.1/adofai.Game.Tests.dll",
+                "${workspaceRoot}/Adofai.Game.Tests/bin/Debug/net5.0/Adofai.Game.Tests.dll",
             ],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "Build (Tests, Debug)",
             "linux": {
                 "env": {
-                    "LD_LIBRARY_PATH": "${workspaceRoot}/adofai.Game.Tests/bin/Debug/netcoreapp3.1:${env:LD_LIBRARY_PATH}"
+                    "LD_LIBRARY_PATH": "${workspaceRoot}/Adofai.Game.Tests/bin/Debug/net5.0:${env:LD_LIBRARY_PATH}"
                 }
             },
             "console": "internalConsole"
@@ -26,47 +26,47 @@
             "request": "launch",
             "program": "dotnet",
             "args": [
-                "${workspaceRoot}/adofai.Game.Tests/bin/Release/netcoreapp3.1/adofai.Game.Tests.dll",
+                "${workspaceRoot}/Adofai.Game.Tests/bin/Release/net5.0/Adofai.Game.Tests.dll",
             ],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "Build (Tests, Release)",
             "linux": {
                 "env": {
-                    "LD_LIBRARY_PATH": "${workspaceRoot}/adofai.Game.Tests/bin/Release/netcoreapp3.1:${env:LD_LIBRARY_PATH}"
+                    "LD_LIBRARY_PATH": "${workspaceRoot}/Adofai.Game.Tests/bin/Release/net5.0:${env:LD_LIBRARY_PATH}"
                 }
             },
             "console": "internalConsole"
         },
         {
-            "name": "adofai (Debug)",
+            "name": "Adofai (Debug)",
             "type": "coreclr",
             "request": "launch",
             "program": "dotnet",
             "args": [
-                "${workspaceRoot}/adofai.Desktop/bin/Debug/netcoreapp3.1/adofai.dll",
+                "${workspaceRoot}/Adofai.Desktop/bin/Debug/net5.0/Adofai.dll",
             ],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "Build (Desktop, Debug)",
             "linux": {
                 "env": {
-                    "LD_LIBRARY_PATH": "${workspaceRoot}/adofai.Desktop/bin/Debug/netcoreapp3.1:${env:LD_LIBRARY_PATH}"
+                    "LD_LIBRARY_PATH": "${workspaceRoot}/Adofai.Desktop/bin/Debug/net5.0:${env:LD_LIBRARY_PATH}"
                 }
             },
             "console": "internalConsole"
         },
         {
-            "name": "adofai (Release)",
+            "name": "Adofai (Release)",
             "type": "coreclr",
             "request": "launch",
             "program": "dotnet",
             "args": [
-                "${workspaceRoot}/adofai.Desktop/bin/Debug/netcoreapp3.1/adofai.dll",
+                "${workspaceRoot}/Adofai.Desktop/bin/Debug/net5.0/Adofai.dll",
             ],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "Build (Desktop, Release)",
             "linux": {
                 "env": {
-                    "LD_LIBRARY_PATH": "${workspaceRoot}/adofai.Desktop/bin/Debug/netcoreapp3.1:${env:LD_LIBRARY_PATH}"
+                    "LD_LIBRARY_PATH": "${workspaceRoot}/Adofai.Desktop/bin/Debug/net5.0:${env:LD_LIBRARY_PATH}"
                 }
             },
             "console": "internalConsole"
